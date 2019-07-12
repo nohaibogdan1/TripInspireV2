@@ -1,0 +1,264 @@
+html, div, body, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Fjalla One', sans-serif;
+    color: rgba(33, 22, 32, 0.8);
+    /*font-size: 10px;*/
+}
+
+body {
+    background-color: rgb(249, 255, 253);
+    height: 100%;
+}
+
+
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:active, [type="button"]:active, [type="reset"]:active, [type="submit"]:active {
+    outline: none;
+}
+
+button:focus, [type="button"]:focus , [type="reset"]:focus, [type="submit"]:focus{
+    outline: none;
+}
+
+
+ul {
+    margin:0;
+    padding:0;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+.nav-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #628aff;
+    height: 50px;
+    align-items: center;
+}
+
+.nav-bar > .wrapper {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.nav-bar button  {
+    cursor: pointer;
+}
+
+
+.nav-bar button > div {
+    display: none;
+    font-weight: bolder;
+    color: white;
+}
+
+.nav-bar .fas {
+    color: white;
+}
+
+.searches {
+    margin: 20px 10px 70px 10px;
+
+}
+
+.load-more-btn  {
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    background-color: #628aff;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bolder;
+    height: 30px;
+    /*width: 100px;*/
+    cursor: pointer;
+    display: none;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+
+
+
+
+.new-locations-text {
+    font-weight: bolder;
+    margin: 0 0 10px 10px;
+    display: inline-block;
+}
+
+
+.search {
+    margin: 20px 0 40px 0;
+    background-color: rgba(1,1,1, 0.05);
+}
+
+
+.search > .adults-number ,
+.search > .children-number,
+.search > .days-number,
+.search > .categories,
+.search > .calendar,
+.search > .price{
+    display: block;
+    font-style: italic;
+    max-width: 260px;
+    margin:2px 0 2px 10px;
+    font-size: 0.9rem;
+}
+
+
+.saved-locations, .new-locations {
+    display: flex;
+    flex-direction: row;
+}
+.saved-locations {
+    flex-wrap: wrap;
+    margin: 0 0 20px 0;
+}
+
+.new-locations {
+    overflow-x: auto;
+}
+
+
+
+.location {
+    background-color: white;
+    box-shadow: 1px -6px 20px 0.1px rgba(0,0,0,0.1);
+    padding:5px 10px 5px 10px;
+    width: 100%;
+    max-width: 300px;
+
+    margin: 5px 7px 5px 7px;
+    flex: none;
+}
+
+
+
+.location > .wrapper {
+    margin-top:5px;
+}
+
+
+.location .location-name {
+    display: block;
+    max-width: 92%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.location .category {
+    font-size: 0.8em;
+}
+
+.location > .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location > .wrapper > .wrapper {
+    width: 80%;
+}
+
+.location .price {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.location .fa-heart {
+    font-size: 2em;
+    color: rgba(1,1,1,0.5);
+}
+
+.location .fas {
+    display: none;
+    color: red;
+}
+
+.location .score {
+    margin-right: 5px;
+}
+
+
+.location .location-image {
+    width: 100%;
+    height: 250px;
+    justify-content: center;
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    background-color: white;
+}
+
+
+.location .location-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 700px) {
+    .nav-bar {
+        top: 0;
+    }
+
+    .nav-bar > .wrapper {
+        width: 60%;
+    }
+
+
+    .nav-bar button > div {
+        display: block;
+    }
+
+    .nav-bar .go-up-btn,
+    .nav-bar i {
+        display: none;
+    }
+
+    .searches {
+        margin-top: 70px;
+    }
+
+
+}

@@ -1,0 +1,1 @@
+const firebaseWorker = new window.Worker('./firebase-messaging-sw.js');

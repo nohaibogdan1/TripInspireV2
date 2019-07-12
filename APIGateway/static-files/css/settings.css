@@ -1,0 +1,123 @@
+html, div, body, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Fjalla One', sans-serif;
+    color: rgba(33, 22, 32, 0.8);
+    /*font-size: 10px;*/
+}
+
+body {
+    background-color: rgb(249, 255, 253);
+    height: 100%;
+}
+
+
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:active, [type="button"]:active, [type="reset"]:active, [type="submit"]:active {
+    outline: none;
+}
+
+button:focus, [type="button"]:focus , [type="reset"]:focus, [type="submit"]:focus{
+    outline: none;
+}
+
+
+
+
+
+.nav-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #628aff;
+    height: 50px;
+    align-items: center;
+}
+
+.nav-bar > .wrapper {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.nav-bar button  {
+    cursor: pointer;
+}
+
+
+.nav-bar button > div {
+    display: none;
+    font-weight: bolder;
+    color: white;
+}
+
+.nav-bar .fas {
+    color: white;
+}
+
+
+
+
+.logout-btn  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #628aff;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bolder;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+@media screen and (min-width: 700px) {
+    .nav-bar {
+        top: 0;
+    }
+
+    .nav-bar > .wrapper {
+        width: 60%;
+    }
+
+
+    .nav-bar button > div {
+        display: block;
+    }
+
+    .nav-bar .go-up-btn,
+    .nav-bar i {
+        display: none;
+    }
+
+
+}

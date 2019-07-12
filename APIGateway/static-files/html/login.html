@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <!--<link rel="stylesheet" href="../styles/colors.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header class="logo">tripinspire</header>
+
+    <div class="main">
+        <h2>Sign in</h2>
+        <form class="login">
+            <div class="wrapper-input">
+                <input type="email" class="email-input" name="emailInput" placeholder="Email" required/>
+                <input type="password" class="password-input" name="passwordInput" placeholder="Password" required/>
+            </div>
+            <input type="submit" class="login-btn" name="connect" value="Connect"/>
+            <span class="error"></span>
+        </form>
+        <button class="forgot-password-btn">Forgot password?</button>
+        <button class="register-btn">Create a new account</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-messaging.js"></script>
+
+    <!--<script src="firebase-messaging-sw.js"></script>-->
+
+    <script src="bundle.js"></script>
+</body>
+</html>

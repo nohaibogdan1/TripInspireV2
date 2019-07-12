@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+    <header class="logo">tripinspire</header>
+
+    <div class="main">
+        <h2>Register</h2>
+        <form class="register">
+            <div class="wrapper-input">
+                <input type="email" class="email-input" name="emailInput" placeholder="Email" required/>
+                <input type="password" class="password-input" name="passwordInput" placeholder="Password" required/>
+                <input type="password" class="password-confirm-input" name="passwordConfirm" placeholder="Confirm password" required/>
+            </div>
+            <span class="error"></span>
+            <input type="submit" class="register-btn" name="register" value="Register"/>
+        </form>
+
+        <button class="login-btn">Connect</button>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-messaging.js"></script>
+    <script src="bundle.js"></script>
+
+</body>
+</html>

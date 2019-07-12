@@ -1,0 +1,152 @@
+html, div, body, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Fjalla One', sans-serif;
+    color: rgba(33, 22, 32, 0.8);
+}
+
+input {
+    outline: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(249, 255, 253);
+    width: 100%;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:active, [type="button"]:active, [type="reset"]:active, [type="submit"]:active {
+    outline: none;
+}
+
+button:focus, [type="button"]:focus , [type="reset"]:focus, [type="submit"]:focus{
+    outline: none;
+}
+
+
+
+.error {
+    margin-top: 5px;
+    width: 90%;
+    word-wrap: break-word;
+}
+
+
+.logo {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    font-weight: bolder;
+    color: white;
+    background-color: #5366c6;
+}
+
+.main {
+    margin-top: 100px;
+    height: 350px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main .login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .login .wrapper-input {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 100%;
+    border-color: rgba(115, 159, 255, 0.5);
+    margin-top: 15px;
+}
+
+.main .login .email-input, .password-input {
+    width: 100%;
+    height: 30px;
+    border-width: 0;
+    border-radius: 5px;
+
+}
+
+.main .login .email-input {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-color: rgba(115, 159, 255, 0.5);
+}
+
+.main .login .login-btn {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    font-size:18px;
+    align-items: center;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: #628aff;
+    color:white;
+}
+
+.main .login .login-btn:active {
+    background-color: #5366c6;
+}
+
+
+.main .register-btn {
+    width: 60%;
+    font-weight: bolder;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #628aff;
+    font-size: 16px;
+}
+
+
+.main .forgot-password-btn {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #628aff;
+}
+
+
+
+
+@media screen and (min-width: 700px) {
+
+    .main {
+        width: 40%;
+        margin: 100px auto;
+    }
+}
+

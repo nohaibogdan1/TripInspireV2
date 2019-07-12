@@ -1,0 +1,31 @@
+{
+    "_id" : ObjectId("5cf641f182fff12a6802d642"),
+    "name" : "Sihanoukville Province",
+    "code" : "KOS",
+    "country" : {
+    "name" : "Cambodia",
+        "code" : "KH"
+},
+    "coordinates" : {
+    "latitude" : 10.625302,
+        "longitude" : 103.523396
+},
+    "category" : "romance"
+}
+
+
+
+{
+    "_id" : ObjectId("5cf641f182fff12a6802d650"),
+    "name" : "Geraldton",
+    "code" : "GET",
+    "country" : {
+        "name" : "Australia",
+        "code" : "AU"
+    },
+    "coordinates" : {
+        "latitude" : -28.777372,
+        "longitude" : 114.614971
+    },
+    "category" : "beach"
+}

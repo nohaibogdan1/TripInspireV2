@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raport tehnic scholarly</title>
+</head>
+<body prefix="schema: http://schema.org">
+<div role="contentinfo">
+    <dl>
+        <dt>Authors</dt>
+        <dd>
+            <a href="https://bitbucket.org/nohaibogdan1">Nohai Ionut Bogdanel</a>
+        </dd>
+    </dl>
+</div>
+<section typeof="sa:Introduction" id="introduction" role="doc-introduction">
+    <h2>Introduction</h2>
+    <p>
+        Descrierea proiectului este urmatoarea: să se creeze o aplicație Web care să ofere sugestii de călătorie pe baza
+        unor constrângeri/preferințe, de exemplu: “doresc o vacanță activă de 7-10 zile la o temperatură mai mare de
+        20°C la mare”
+        sau “doresc un city break în Europa care să coste mai puțin de 200 EUR de persoană”. Sistemul va gestiona
+        diverse criterii de selectare.
+        Pe baza acestor criterii, se vor monitoriza prețurile biletelor de avion pentru destinațiile ce se potrivesc,
+        alertandu-se (via browser notifications) utilizatorii când criteriile sunt îndeplinite. Un utilizator poate avea
+        una sau mai multe
+        căutări de vacanțe active. Pentru implementare se poate folosi API-ul: https://docs.kiwi.com/
+    </p>
+    <p>
+        Tehnologiile folosite pentru implementarea solutiei sunt: pe partea de front-end HTML5, CSS3 si JavaScript, pe
+        parte de back-end JavaScript (NodeJS).
+    </p>
+    <p>
+        Pentru consumarea serviciului web am folosit paradigma REST, pentru arhitectura am ales cea bazata microservicii, iar
+        pentru baze de date am folosit paradigma NoSQL.
+    </p>
+    <p> BitBucket a fost alegerea pentru managementul online al codului sursa.</p>
+
+</section>
+<section id="arhitectura">
+    <h2>Arhitectura</h2>
+    <p>
+        Serverul APIGateway comunica cu clientul si cu serverele UserServer, TripServer, FlightServer si Firebase. Serverul UserServer
+        comunica doar cu APIGateway. Serverele TripServer si FlightServer comunica cu APIGateway si cu API-ul extern Kiwi.com.
+    </p>
+</section>
+<section id="implementare-comportamente">
+    <h2>Implementarea comportamentelor</h2>
+    <section id="autentificare-user">
+        <h4>Autentificarea utilizatorului</h4>
+        <p>
+            Autentificarea utilizatorului se face folosind un jsonwebtoken pe care APIGateway-ul il stocheaza in cookies doar
+            daca credentialele trimise de utilizator in momentul conectarii (login-ului) se afla in baza de date (adaugate in
+            baza de date la momentul inregistrarii). Pentru crearea si validarea tokenului am folosit pachetul npm
+            <a href="https://www.npmjs.com/package/jsonwebtoken">jsonwebtoken</a>, iar pentru manevrarea cookie-urilor
+            pachetul npm <a href="https://www.npmjs.com/package/cookie">cookie</a>.
+        </p>
+    </section>
+    <section id="comportament-add-trip">
+        <h4>Comportamentul rularii unei cautari pe pagina add-trip</h4>
+        <p>
+            Dupa ce utilizatorul a inserat un nume a locatiei de plecare si apasa "Search" pe partea de backend APIGateway-ul trimite cerere catre
+            TripServer de a adauga parametrii de cautare intr-un nou document Search, apoi cauta locatii pe baza categoriilor
+            apeland API-ul extern de la Kiwi, apoi trimite raspuns catre APIGateway. De aici APIGateway-ul trimite cerere catre FlightServer
+            pentru a cauta bilete de avion pentru fiecare locatie cu parametri dati de utilizator. FlightServer-ul trimite raspuns cu
+            cele mai bune preturi pentru fiecare locatie si mai adauga in baza de date biletele de avion. APIGateway-ul salveaza
+            parametrii de cautare in cache pentru ca atunci cand clientul apasa "load more" la bilete de avion sa trimita direct
+            cerere catre FlightServer. Ideea de a salva zborurile in baza de date este pentru a lua rapid zboruri atunci
+            cand clientul apasa buton "load more" pentru a primi mai multe zboruri si sa nu trimit toate zborurile o data catre client
+            ca sa nu ii cresc consumul de date.
+        </p>
+        <p>
+            Daca utilizatorul nu apasa pe butonul "load more" rezultatele ramase nevazute vor fi ori trimise pe notificari ori afisate
+            in pagina cu locatii salvate la sectiunea "You might pe interested".
+        </p>
+    </section>
+    <section id="comportament-main-page">
+        <h4>Ce se intampla atunci cand utilizatorul intra pe pagina cu noutati</h4>
+        <p>
+            Aceasta pagina contine: o lista de search-uri, fiecare search contine doua liste de locatii: una cu locatii salvate prin apasarea
+            butonului in forma de inima, alta cu locatii noi sau cu locatii care au primit un nou pret minim. Am considerat ca o data
+            ce utilizatorul intra pe aceasta pagina locatiile noi(bune pentru notificare) sa devina vechi deoarece utilizatorul le-a observat
+            si a ales sa nu le salveze, de aceea la un refresh de pagina acele locatii noi vor disparea.
+        </p>
+    </section>
+    <section id="push-notification">
+        <h4>Push notifications pentru bilete noi</h4>
+        <p>
+            Pentru primirea de notificari de catre client a trebuit construirea unui web worker care sa receptioneze aceste notificari
+            cand nicio pagina a site-ului nu este deschisa sau utilizatorul se afla pe alta pagina.
+            Serviciul de <a href="https://firebase.google.com/docs/cloud-messaging/">cloud messaging</a> de la firebase face usoara
+            trimiterea notificarilor prin simplul fapt ca serverului trimite catre fireabase cloud messaging un post request
+            in care mentioneaza datele legate notificare (textul, ce pagina sa deschida la apasarea toast-ului de notificare, etc), iar targetarea
+            clientului se face cu un token special asignat clientului de catre firebase.
+        </p>
+        <p>
+            Pentru a trimite notificare din moment in moment APIGateway-ul are un cronjob (un setTimeout mai special) care face fork (folosind
+            functia fork din modulul NodeJS child_process) la un script care trimite notificari catre toti clientii.
+        </p>
+    </section>
+</section>
+</body>
+</html>

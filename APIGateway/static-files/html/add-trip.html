@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Trip</title>
+    <link rel="stylesheet" href="add-trip.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div class="main">
+
+    <nav class="nav-bar">
+        <div class="wrapper">
+            <button class="add-trip-btn">
+                <i class="fas fa-plus"></i>
+                <div class="text">ADD TRIP</div>
+            </button>
+
+
+            <button class="manage-trips-btn">
+                <i class="fas fa-suitcase"></i>
+                <div class="text">TRIPS</div>
+            </button>
+
+            <button class="settings-btn">
+                <i class="fas fa-cog"></i>
+                <div class="text">SETTINGS</div>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <div class="wrapper">
+        <form class="filters">
+            <fieldset class="categories">
+                <div>Things to do</div>
+                <div class="wrapper">
+                    <div class="category">
+                        <input type="checkbox" id="beach" value="beach" name="beach">
+                        <label for="beach">beach</label>
+                    </div>
+                    <div class="category">
+                        <input type="checkbox" id="romance" value="romance" name="romance">
+                        <label for="romance">romance</label>
+                    </div>
+                    <div class="category">
+                        <input type="checkbox" id="activities" value="activities" name="activities">
+                        <label for="activities">activities</label>
+                    </div>
+                    <div class="category">
+                        <input type="checkbox" id="nature" value="nature" name="nature">
+                        <label for="nature">nature</label>
+                    </div>
+                    <div class="category">
+                        <input type="checkbox" id="sports" value="sports" name="sports">
+                        <label for="sports">sports</label>
+                    </div>
+                    <div class="category">
+                        <input type="checkbox" id="unusual" value="unusual" name="unusual">
+                        <label for="unusual">unusual</label>
+                    </div>
+                    <div class="category">
+                        <input type="checkbox" id="adventure" value="adventure" name="adventure">
+                        <label for="adventure">adventure</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="departure-location-name">
+                    <label for="location-name">From: </label>
+                    <input id="location-name" type="text"  name="locationName" required/>
+                </div>
+            </fieldset>
+
+            <fieldset class="when">
+                <div class="first-day">
+                    <label for="first-day-date">First day</label>
+                    <input id="first-day-date" type="date" name="firstDay" />
+                </div>
+                <div class="second-day">
+                    <label for="second-day-date">Second day</label>
+                    <input id="second-day-date" type="date" name="secondDay" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="dus-intors">
+                    <label for="return-checkbox">Go and come back</label>
+                    <input id="return-checkbox" type="checkbox" value="return" name="goAndReturn"/>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="days">
+                    <span>How many days?</span>
+                    <div class="wrapper">
+                        <button class="minus-btn"><i class="fas fa-minus"></i></button>
+                        <span class="days-number">0</span>
+                        <button class="plus-btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="price">
+                    <span>Price (EUR)</span>
+                    <div class="wrapper">
+                        <input type="number" class="min-price" name="minPrice" />
+                        <input type="number" class="max-price" name="maxPrice" />
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="people">
+                <div class="adults">
+                    <span>Adults</span>
+                    <div class="wrapper">
+                        <button id="min" class="minus-btn"><i class="fas fa-minus"></i></button>
+                        <span class="adults-number">0</span>
+                        <button class="plus-btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="children">
+                    <span>Children</span>
+                    <div class="wrapper">
+                        <button class="minus-btn"><i class="fas fa-minus"></i></button>
+                        <span class="children-number">0</span>
+                        <button class="plus-btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+
+            <span class="error"></span>
+
+            <input type="submit" class="search-btn" value="Search" name="search"/>
+        </form>
+
+
+        <div class="results">
+
+            <div class="result-order">
+                <div class="wrapper">
+                </div>
+            </div>
+
+            <ul class="wrapper">
+
+                <!--<li class="result">-->
+                    <!--<span class="category">culture</span>-->
+                    <!--<div class="wrapper">-->
+                        <!--<div class="wrapper">-->
+                            <!--<span class="location-name">Iasi jaidhaiyfuiesfesjfisiohsuihhcjknjknejfnje</span>-->
+                            <!--<span class="price">From 150 EUR</span>-->
+                        <!--</div>-->
+                        <!--<span class="score">9.1</span>-->
+                        <!--<button class="save-btn">-->
+                            <!--<i class="far fa-heart"></i>-->
+                            <!--<i class="fas fa-heart"></i>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="location-image">-->
+                        <!--<img src="/images/img1.jpg" alt=""/>-->
+                    <!--</div>-->
+                <!--</li>-->
+
+                <!--<li class="result">-->
+                    <!--<span class="category">culture</span>-->
+                    <!--<div class="wrapper">-->
+                        <!--<div class="wrapper">-->
+                            <!--<span class="location-name">Iasi jaidhaiyfuiesfesjfisiohsuihhcjknjknejfnje</span>-->
+                            <!--<span class="price">From 150 EUR</span>-->
+                        <!--</div>-->
+                        <!--<span class="score">9.1</span>-->
+                        <!--<button>-->
+                            <!--<i class="far fa-heart"></i>-->
+                            <!--<i class="fas fa-heart"></i>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="location-image">-->
+                        <!--<img src="/images/img3.jpg" alt=""/>-->
+                    <!--</div>-->
+
+                <!--</li>-->
+
+                <!--<li class="result">-->
+                    <!--<span class="category">culture</span>-->
+                    <!--<div class="wrapper">-->
+                        <!--<div class="wrapper">-->
+                            <!--<span class="location-name">Iasi jaidhaiyfuiesfesjfisiohsuihhcjknjknejfnje</span>-->
+                            <!--<span class="price">From 150 EUR</span>-->
+                        <!--</div>-->
+                        <!--<span class="score">9.1</span>-->
+                        <!--<button>-->
+                            <!--<i class="far fa-heart"></i>-->
+                            <!--<i class="fas fa-heart"></i>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="location-image">-->
+                        <!--<img src="/images/img2.jpg" alt=""/>-->
+                    <!--</div>-->
+
+                <!--</li>-->
+
+
+            </ul>
+
+            <button class="load-more-btn">Load more</button>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-messaging.js"></script>
+<script src="bundle.js"></script>
+
+</body>
+</html>

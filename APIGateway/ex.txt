@@ -1,0 +1,1 @@
+webpack.js D:\docs\facultate\web\proiect\tripinspire\backend\APIGateway\static-files\js D:\docs\facultate\web\proiect\tripinspire\backend\APIGateway\static-files\js\bundle.js
