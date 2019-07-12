@@ -232,7 +232,6 @@ class TripController {
     static updateLocations() {
 
         countries.map(country => {
-            // let categories = ["romance", "activities", "nature", "beach", "sports", "unusual", "adventure"];
             categories.map(category => {
                 const countryCode = country.code;
 

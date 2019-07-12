@@ -9,70 +9,12 @@ const {TripView} = require('./views');
 
 const {LocationController} = require('./controllers');
 
-// const dataFromClient = {
-//     userId: "423987rdcsi8",
-//     categories: "beach,nature",
-//     firstDay: new Date(),
-//     secondDay: new Date(),
-//     days: 5,
-//     goAndBack: true,
-//     adults: 3,
-//     children: 2,
-//     minPrice: 120,
-//     maxPrice: 280,
-//     minTemp: 20,
-//     maxTemp: 30
-// };
 
-/*
-let req = {};
-
-let res = {};
-let message = {};*/
-
-// req.query = dataFromClient;
-//
-// req.dataFromClient = dataFromClient;
-
-//
-// TripController.createTrip({req, res, message}).then(TripView.createTrip);
-
-// TripController.createTrip({req, res, message});
-
+// este necesarea rularea
+//   TripController.updateLocations() pentru o singura data
+//   pentru adaugarea oraselor in baza de date
 
 // TripController.updateLocations();
-
-// TripController.createTrip({req, res, message}).then(TripView.createTrip);
-
-console.log('dawf');
-/*
-const dummyData = [
-    {
-        locationId: '5cf641f182fff12a6802d642',
-        fromLocationCode: 'IAS',
-        bestFlightPrice: 20
-    },
-    {
-        locationId: '5cf641f182fff12a6802d650',
-        bestFlightPrice: 50,
-        fromLocationCode: 'IAS'
-    }
-];
-
-req.query = {
-
-    locationId: '5cf641f182fff12a6802d642'
-};
-
-req.dataFromClientJSON = {
-    fromLocationCode: 'IAS',
-    bestFlightPrice: 40
-};
-
-*/
-
-
-// LocationController.updateLocationPrice({req, res, message});
 
 
 server.on('request', (req, res) => {
@@ -197,82 +139,3 @@ server.on('request', (req, res) => {
 
 
 });
-
-/*
-
-const {SearchModel} = require('./models');
-
-
-let req = {query:{userId:'5d0220068a81ee17c84e0366'}};
-let res = {};
-let message = {};
-
-
-TripController.getSavedLocations({req, res, message});
-
-*/
-
-/*
-
-SearchModel.updateSaveStateOfLocation({searchId:'5cfe4e3f553a72363c59b04e',
-    locationId:'5cfa7452aa69672034f45d61',
-    saveState: true});
-*/
-
-//
-//
-// let req = {
-//     query: {
-//         searchId: '5cfe4e3f553a72363c59b04e',
-//         locationId: '5cfa7452aa69672034f45d61'
-//     },
-//     dataFromClientJSON: {
-//         saveState: false
-//     }
-// };
-//
-//
-// let res = {};
-// let message = {};
-//
-// SearchController.updateSaveStateOfLocation({req, res, message});
-
-
-// LocationController.getAllLocations({req, res ,message});
-
-// TripController.addSearch();
-
-// SearchController.updateLocationsBestFlightPrice();
-
-
-/*
-const query = {
-    userId: '3253rfeess',
-    categories: "nature,beach",
-    firstDay: new Date('02/20/2019'),
-    secondDay: new Date('06/20/2019'),
-    goAndBack: true,
-    days: 5,
-    minPrice: 20,
-    maxPrice: 1000,
-    adults: 3,
-    children: 1,
-    locationsFlightsBestPrices: [],
-    fromLocationName: 'f',
-    fromLocationAltitude: 12443.32,
-    fromLocationLongitude: 141254
-
-};*/
-
-// req.query = query;
-
-
-// TripController.createTrip({req, res, message});
-/*
-
-
-let req = {};
-let res = {};
-let message = {};
-
-TripController.getSearchesWithSavedLocations({req, res, message});*/

@@ -60,7 +60,7 @@ const userHaveNewFlights = (userId) => {
             if (result.data.message.contains) {
                 resolve();
             }
-        })
+        }).catch(()=>{})
     })
 };
 
@@ -84,7 +84,7 @@ const executeCode = () => {
                         sendNotificationToUser(notificationToken.token);
 
 
-                    })
+                    }).catch(()=>{});
 
 
             })

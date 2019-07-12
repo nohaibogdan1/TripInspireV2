@@ -5,22 +5,12 @@ const {createUser, login, verifyToken, UserViews, logout} = require('./user');
 const {viewTrip, createTrip} = require('./trip');
 const {getDataFromClient} = require('./getDataFromClient');
 
-const {SearchCacheModel} = require('./SearchCacheModel');
-
-
 const {Views} = require('./views');
 
 
 const {Controllers} = require('./controllers');
 
-const {routes} = require('./routes');
-
-
 require('./flight');
-//fererwreedsffesfdwdefcesfdawefdewerfdawfefessedadawefdawdw
-// req = {};
-// res = {};
-// message = {};
 
 // Controllers.getNewTrips({req, res, message}).then(Views.getNewTrips);
 

@@ -1,11 +1,9 @@
 const {db} = require('./db_connection');
 const {getAllSearchesAllLocations, updateTripSearchPrices} = require('./trip');
 const {getFlights, getFlightsForLocation} = require('./flight');
-const {Controllers} = require('./controllers');
 
 
 db.then(() => {
-    // console.log("dawd");
     getAllSearchesAllLocations()
         .then(({searches, locations}) => {
             function loopSearches (searches, i) {
@@ -74,13 +72,13 @@ db.then(() => {
                             } else {
                             }
                         }
-                    });
+                    }).catch(()=>{});
                 }
             }
 
             loopSearches(searches, 0);
-        });
-});
+        }).catch(()=>{});
+}).catch(()=>{});
 
 
 

@@ -24,7 +24,7 @@ const updateSaveStateOfLocation = ({searchId, locationId, saveState}) => {
                 reject();
             }
 
-        })
+        }).catch(()=>{});
 
 
     });

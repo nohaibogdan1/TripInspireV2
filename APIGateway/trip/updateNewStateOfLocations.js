@@ -27,7 +27,7 @@ const updateNewStateOfLocations = ({searchId, locationsIds}) => {
                 reject();
             }
 
-        })
+        }).catch(()=>{});
 
 
     });

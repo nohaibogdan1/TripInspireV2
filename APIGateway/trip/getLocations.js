@@ -26,7 +26,7 @@ const getLocations = (params) => {
             }
 
 
-        }).catch(err => {});
+        }).catch(err => {console.log('error')});
 
 
     });
